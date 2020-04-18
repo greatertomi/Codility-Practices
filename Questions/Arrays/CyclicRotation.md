@@ -1,5 +1,5 @@
-##CyclicRotation
-####Rotate an array to the right by a given number of steps.
+## CyclicRotation
+#### Rotate an array to the right by a given number of steps.
 
 An array A consisting of N integers is given. Rotation of the array means that each element is shifted right by one index, and the last element of the array is moved to the first place. For example, the rotation of array A = [3, 8, 9, 7, 6] is [6, 3, 8, 9, 7] (elements are shifted right by one index and 6 is moved to the first place).
 
@@ -34,6 +34,7 @@ the function should return [1, 2, 3, 4]
 
 Assume that:
 
-N and K are integers within the range [0..100];
-each element of array A is an integer within the range [−1,000..1,000].
+* N and K are integers within the range [0..100];
+* each element of array A is an integer within the range [−1,000..1,000].
+
 In your solution, focus on correctness. The performance of your solution will not be the focus of the assessment.

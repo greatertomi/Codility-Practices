@@ -1,4 +1,4 @@
-## Tape Equilibrum
+## Tape Equilibrium
 #### Minimize the value |(A[0] + ... + A[P-1]) - (A[P] + ... + A[N-1])|.
 
 A non-empty array A consisting of N integers is given. Array A represents numbers on a tape.
@@ -11,11 +11,11 @@ In other words, it is the absolute difference between the sum of the first part 
 
 For example, consider array A such that:
 
-      A[0] = 3<br/>
-      A[1] = 1<br/>
-      A[2] = 2<br/>
-      A[3] = 4<br/>
-      A[4] = 3<br/>
+      A[0] = 3
+      A[1] = 1
+      A[2] = 2
+      A[3] = 4
+      A[4] = 3
 We can split this tape in four places:
 
 * P = 1, difference = |3 − 10| = 7
@@ -31,14 +31,14 @@ that, given a non-empty array A of N integers, returns the minimal difference th
 
 For example, given:
 
-  A[0] = 3
-  A[1] = 1
-  A[2] = 2
-  A[3] = 4
-  A[4] = 3
+      A[0] = 3
+      A[1] = 1
+      A[2] = 2
+      A[3] = 4
+      A[4] = 3
 the function should return 1, as explained above.
 
-Write an efficient algorithm for the following assumptions:
+Write an **efficient** algorithm for the following assumptions:
 
 * N is an integer within the range [2..100,000];
 * each element of array A is an integer within the range [−1,000..1,000].
