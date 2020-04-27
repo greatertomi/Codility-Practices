@@ -1,3 +1,4 @@
+# Didn't solve this.
 def solution(array):
     leaves_dict = {'open': [], 'closed': []}
     for i in range(len(array)):
