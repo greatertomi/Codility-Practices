@@ -1,28 +1,30 @@
-# Didn't solve this.
-def solution(array):
-    leaves_dict = {'open': [], 'closed': []}
-    for i in range(len(array)):
-        if array[i] == 1:
-            leaves_dict['open'].append(i+1)
-        else:
-            leaves_dict['closed'].append(i+1)
+def solution(array: list):
+    array.append(1)
+    N = len(array)
 
-    print(leaves_dict)
+    fib_table = [0]*27
+    fib_table[1] = 1
+    index = None
 
-def fib(num):
-    store = [None] * (num+1)
-    return fib_engine(num, store)
+    for index in range(2, 27):
+        fib_table[index] = fib_table[index-1] + fib_table[index-2]
+        if fib_table[index] > N:
+            break
 
-def fib_engine(num, store):
-    if store[num] is not None:
-        return store[num]
-    if num < 0:
-        return 0
-    if num == 1 or num == 2:
-        return 1
+    fib_table = fib_table[2:index]
 
-    total = fib_engine(num-1, store) + fib_engine(num-2, store)
-    store[num] = total
-    return total
+    next_try = [-1]*N
+    for index in range(len(fib_table)):
+        next_try[fib_table[index] - 1] = 1
 
-solution([0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0])
+    for index, leaf in enumerate(array):
+        if next_try[index] > 0 and leaf == 1:
+            for fib in fib_table:
+                if index + fib >= N:
+                    break
+                if next_try[index+fib] < 0 or next_try[index+fib] > next_try[index] + 1:
+                    next_try[index+fib] = next_try[index]+1
+    return next_try[-1]
+
+A = [0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0]
+print(solution(A))
