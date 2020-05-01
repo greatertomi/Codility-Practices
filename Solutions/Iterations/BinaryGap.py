@@ -6,6 +6,7 @@ def convertToBinary(number: int):
     binary = binary[::-1]
     return binary
 
+
 def solution(num):
     if num <= 0:
         return 0
@@ -21,5 +22,6 @@ def solution(num):
                 max_zero_count = temp_zero_count
             temp_zero_count = 0
     return max_zero_count
+
 
 print(solution(1041))
